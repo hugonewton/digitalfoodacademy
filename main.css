@@ -40,6 +40,6 @@
 }
 
 .ribbon-collection-list {
-  animation: marquee 30s infinite linear;
-  webkit-animation: marquee 30s infinite linear;
+  animation: marquee 50s infinite linear;
+  webkit-animation: marquee 50s infinite linear;
 }
