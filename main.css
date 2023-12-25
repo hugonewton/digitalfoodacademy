@@ -1,5 +1,3 @@
 .bullet-list-wrapper .body-p::after {
-    content: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.71641 8.81562L13.8944 11.6985L0 21L5.28265 12.1844L0.105596 9.30154L14 0L8.71641 8.81562Z' fill='white'/%3E%3C/svg%3E%0A");
-    width: 200px;
-    height: 200px;
+    content: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 14 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.71641 8.81562L13.8944 11.6985L0 21L5.28265 12.1844L0.105596 9.30154L14 0L8.71641 8.81562Z' fill='white'/%3E%3C/svg%3E%0A");
 }
