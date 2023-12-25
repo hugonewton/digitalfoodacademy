@@ -39,7 +39,7 @@
   }
 }
 
-.ribbon-collection-item {
+.ribbon-collection-list {
   animation: marquee 30s infinite linear;
   webkit-animation: marquee 30s infinite linear;
 }
