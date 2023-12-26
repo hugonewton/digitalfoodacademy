@@ -39,6 +39,8 @@
 
  // Get all the buttons
  var buttons = document.querySelectorAll('.pricing-btn');
+ var startNowBtn = document.getElementById('start-now-btn');
+
 
  // Add event listeners to all buttons
  buttons.forEach(function (button) {
@@ -58,8 +60,13 @@
 
      // Get the price from the data attribute
      var newPrice = button.getAttribute('data-price');
+     var newUrl = button.getAttribute('data-url');
+
 
      // Update the price in the paragraph
      var priceParagraph = document.querySelector('.pricing-price-p');
      priceParagraph.textContent = newPrice;
+
+     // Update the link in the "start-now-btn"
+     startNowBtn.setAttribute('href', newUrl);
  }
