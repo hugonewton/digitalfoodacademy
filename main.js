@@ -86,7 +86,7 @@
  }
 
 
-function applyPromoCode() {
+ function applyPromoCode() {
   // Get the promo code input value
   var promoCodeInput = document.getElementById('promo-code-input');
   var promoCode = promoCodeInput.value;
@@ -100,8 +100,10 @@ function applyPromoCode() {
   if (promoCodePrice) {
       // Promo code is valid, update the price
       var activeButton = document.querySelector('.pricing-btn.active');
-      updatePriceAndLink(activeButton);
-      promoCodeFormFail.textContent = ''; // Clear error message
+      if (activeButton) {
+          updatePriceAndLink(activeButton);
+          promoCodeFormFail.textContent = ''; // Clear error message
+      }
   } else {
       // Promo code is invalid, display error message
       promoCodeFormFail.textContent = 'Invalid promo code. Please try again.';
