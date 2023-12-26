@@ -43,3 +43,8 @@
   animation: marquee 50s infinite linear;
   webkit-animation: marquee 50s infinite linear;
 }
+
+
+.w-embed footer {
+  display: none;
+}
