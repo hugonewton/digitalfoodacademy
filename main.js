@@ -37,10 +37,17 @@
   }
 
 
- // Get all the buttons
- var buttons = document.querySelectorAll('.pricing-btn');
- var startNowBtn = document.getElementById('start-now-btn');
- var promoCodeSubmitBtn = document.getElementById('promo-code-submit-btn');
+    // Get all the buttons
+    var buttons = document.querySelectorAll('.pricing-btn');
+    var startNowBtn = document.getElementById('start-now-btn');
+    var promoCodeSubmitBtn = document.getElementById('promo-code-submit-btn');
+
+    // Promo codes and their corresponding prices
+    var promoCodePrices = {
+      'CODE1': '900,00 €',
+      'CODE2': '750,00 €',
+      // Add more promo codes and prices as needed
+    };
 
 
       // Add event listeners to all buttons
@@ -84,18 +91,22 @@
   var promoCodeInput = document.getElementById('promo-code-input');
   var promoCode = promoCodeInput.value;
 
-  // Perform actions with the promo code, e.g., validate and apply discounts
-  
+  // Look up the price for the entered promo code
+  var promoCodePrice = promoCodePrices[promoCode];
 
   // Display a success or failure message
-  var promoCodeFormDone = document.querySelector('.w-form-done');
-  var promoCodeFormFail = document.querySelector('.w-form-fail');
+  var promoCodeFormFail = document.querySelector('.w-form-fail div');
 
-  if (promoCode === 'EXAMPLE123') {
-      promoCodeFormDone.style.display = 'block';
-      promoCodeFormFail.style.display = 'none';
+  if (promoCodePrice) {
+      // Promo code is valid, update the price
+      updatePriceAndLink({
+          getAttribute: function () { return promoCodePrice; }
+      });
+      promoCodeFormFail.textContent = ''; // Clear error message
+      // You can also hide the success message if you want
+      // document.querySelector('.w-form-done').style.display = 'none';
   } else {
-      promoCodeFormDone.style.display = 'none';
-      promoCodeFormFail.style.display = 'block';
+      // Promo code is invalid, display error message
+      promoCodeFormFail.textContent = 'Invalid promo code. Please try again.';
   }
 }
