@@ -36,3 +36,30 @@
     });
   }
 
+
+ // Get all the buttons
+ var buttons = document.querySelectorAll('.pricing-btn');
+
+ // Add event listeners to all buttons
+ buttons.forEach(function (button) {
+     button.addEventListener('click', function () {
+         updatePrice(button);
+     });
+ });
+
+ function updatePrice(button) {
+     // Remove "active" class from all buttons
+     buttons.forEach(function (btn) {
+         btn.classList.remove('active');
+     });
+
+     // Add "active" class to the clicked button
+     button.classList.add('active');
+
+     // Get the price from the data attribute
+     var newPrice = button.getAttribute('data-price');
+
+     // Update the price in the paragraph
+     var priceParagraph = document.querySelector('.pricing-price-p');
+     priceParagraph.textContent = newPrice;
+ }
