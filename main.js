@@ -40,14 +40,21 @@
  // Get all the buttons
  var buttons = document.querySelectorAll('.pricing-btn');
  var startNowBtn = document.getElementById('start-now-btn');
+ var promoCodeSubmitBtn = document.getElementById('promo-code-submit-btn');
 
 
- // Add event listeners to all buttons
- buttons.forEach(function (button) {
-     button.addEventListener('click', function () {
-      updatePriceAndLink(button);
+      // Add event listeners to all buttons
+      buttons.forEach(function (button) {
+          button.addEventListener('click', function () {
+            updatePriceAndLink(button);
+          });
+      });
+
+    // Add event listener to promo code submit button
+     promoCodeSubmitBtn.addEventListener('click', function (event) {
+         event.preventDefault(); // Prevent the form from submitting (since it's a link)
+         applyPromoCode();
      });
- });
 
  function updatePriceAndLink(button) {
      // Remove "active" class from all buttons
@@ -70,3 +77,25 @@
      // Update the link in the "start-now-btn"
      startNowBtn.setAttribute('href', newUrl);
  }
+
+
+ function applyPromoCode() {
+  // Get the promo code input value
+  var promoCodeInput = document.getElementById('promo-code-input');
+  var promoCode = promoCodeInput.value;
+
+  // Perform actions with the promo code, e.g., validate and apply discounts
+  
+
+  // Display a success or failure message
+  var promoCodeFormDone = document.querySelector('.w-form-done');
+  var promoCodeFormFail = document.querySelector('.w-form-fail');
+
+  if (promoCode === 'EXAMPLE123') {
+      promoCodeFormDone.style.display = 'block';
+      promoCodeFormFail.style.display = 'none';
+  } else {
+      promoCodeFormDone.style.display = 'none';
+      promoCodeFormFail.style.display = 'block';
+  }
+}
