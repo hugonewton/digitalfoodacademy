@@ -102,10 +102,11 @@
       // Promo code is valid, update the price directly in the paragraph
       var priceParagraph = document.querySelector('.pricing-price-p');
       if (priceParagraph) {
-          priceParagraph.textContent = promoCodePrice;
+          priceParagraph.textContent = promoCodePrice + ' €';
       }
 
       promoCodeFormFail.textContent = ''; // Clear error message
+      promoCodeFormFail.style.display = 'none'; // Hide the error message
   } else {
       // Promo code is invalid, display error message
       //promoCodeFormFail.textContent = 'Invalid promo code. Please try again.';
