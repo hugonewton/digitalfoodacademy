@@ -96,13 +96,13 @@
   var promoCodePrice = promoCodePrices[promoCode];
 
   // Display a success or failure message
-  var promoCodeFormFail = document.querySelector('.w-form-fail div');
+  var promoCodeFormFail = document.getElementById('promo-code-fail-message');
 
   if (promoCodePrice) {
       // Promo code is valid, update the price directly in the paragraph
       var priceParagraph = document.querySelector('.pricing-price-p');
       if (priceParagraph) {
-          priceParagraph.textContent = promoCodePrice + ' €';
+          priceParagraph.textContent = promoCodePrice;
       }
 
       promoCodeFormFail.textContent = ''; // Clear error message
