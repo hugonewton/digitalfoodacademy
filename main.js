@@ -45,11 +45,11 @@
  // Add event listeners to all buttons
  buttons.forEach(function (button) {
      button.addEventListener('click', function () {
-         updatePrice(button);
+      updatePriceAndLink(button);
      });
  });
 
- function updatePrice(button) {
+ function updatePriceAndLink(button) {
      // Remove "active" class from all buttons
      buttons.forEach(function (btn) {
          btn.classList.remove('active');
