@@ -48,3 +48,8 @@
 .w-embed footer {
   display: none;
 }
+
+.code-promo-input {
+  height: 100%;
+  padding: 1em;
+}
