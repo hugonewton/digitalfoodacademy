@@ -97,6 +97,7 @@
 
   // Display a success or failure message
   var promoCodeFormFail = document.getElementById('promo-code-fail-message');
+  var promoCodeAuLieuDe = document.getElementById('price-au-lieu-de');
 
   if (promoCodePrice) {
       // Promo code is valid, update the price directly in the paragraph
@@ -105,12 +106,13 @@
           priceParagraph.textContent = promoCodePrice;
       }
 
-      //promoCodeFormFail.textContent = ''; // Clear error message
       promoCodeFormFail.style.display = 'none'; // Hide the error message
+      promoCodeAuLieuDe.style.display = 'block' // Show the "Au lieu de"
+
   } else {
       // Promo code is invalid, display error message
-      //promoCodeFormFail.textContent = 'Invalid promo code. Please try again.';
       promoCodeFormFail.style.display = 'block'; // Show the error message
+      promoCodeAuLieuDe.style.display = 'none' // Hide the "Au lieu de"
   }
 }
 
