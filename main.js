@@ -105,7 +105,7 @@
           priceParagraph.textContent = promoCodePrice;
       }
 
-      promoCodeFormFail.textContent = ''; // Clear error message
+      //promoCodeFormFail.textContent = ''; // Clear error message
       promoCodeFormFail.style.display = 'none'; // Hide the error message
   } else {
       // Promo code is invalid, display error message
