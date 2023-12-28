@@ -56,3 +56,9 @@
   outline: none;
   border: none;
 }
+
+
+media screen and (max-width: 479px)
+.code-promo-input {
+    flex-direction: width: 100%;
+}
