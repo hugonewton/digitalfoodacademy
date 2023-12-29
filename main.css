@@ -67,6 +67,9 @@ media screen and (max-width: 479px)
   filter: drop-shadow(0px 0px 44px var(--flash-purple));
 }
 
+.custom-video-thumb-wrappper {
+  pointer-events: none;
+}
 
 .youtube-video:hover .play-icon-yt-video {
   color: var(--accent);
