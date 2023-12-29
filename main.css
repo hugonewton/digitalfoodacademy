@@ -62,3 +62,7 @@ media screen and (max-width: 479px)
 .code-promo-input {
     flex-direction: width: 100%;
 }
+
+.play-icon-yt-video {
+  filter: drop-shadow(0px 0px 44px var(--accent));
+}
