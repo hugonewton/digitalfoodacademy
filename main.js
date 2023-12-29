@@ -116,3 +116,32 @@
   }
 }
 
+
+var player;
+
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      height: '100%',
+      width: '100%',
+      videoId: '2LwjfYc1x8',
+      playerVars: {
+        'autoplay': 0,
+        'controls': 1,
+        'rel': 0,
+        'showinfo': 0
+      }
+    });
+
+    // Add click event listener to the play button
+    var playButton = document.querySelector('.custom-video-thumb-wrappper');
+    playButton.addEventListener('click', function() {
+      playVideo();
+    });
+  }
+
+  function playVideo() {
+    if (player) {
+      player.playVideo();
+    }
+  }
+
