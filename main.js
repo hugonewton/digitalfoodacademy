@@ -137,6 +137,7 @@ var player;
     var playButton = document.querySelector('.custom-video-thumb-wrappper');
     playButton.addEventListener('click', function() {
       playVideo();
+      playButton.style.display = 'none';
     });
   }
 
