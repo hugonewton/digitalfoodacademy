@@ -44,6 +44,11 @@
   webkit-animation: marquee 50s infinite linear;
 }
 
+.ribbon-collection-list.reverse {
+  animation: marquee-reverse 50s infinite linear;
+  webkit-animation: marquee-reverse 50s infinite linear;
+}
+
 
 .w-embed footer {
   display: none;
