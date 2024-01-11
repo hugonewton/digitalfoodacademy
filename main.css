@@ -81,11 +81,6 @@ media screen and (max-width: 479px)
   border-bottom: 1px solid rgba(9, 26, 80, .2);
 }
 
-
-.inspi-collection-list .inspi-collection-item:nth-child(even) {
-  background: red;
-}
-
 .inspi-collection-list .inspi-collection-item:nth-child(even) .number-container, 
 .inspi-collection-list .inspi-collection-item:nth-child(even) .commentaire-title {
   background-color: var(--flash-purple);
