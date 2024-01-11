@@ -100,5 +100,5 @@ media screen and (max-width: 479px)
 }
 
 .inspi-collection-list .inspi-collection-item:nth-child(even) .color-overlay {
-  background-color: rgba(9, 26, 80, .5);
+  background-color: rgba(78, 61, 253, .4);
 }
