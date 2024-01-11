@@ -108,3 +108,19 @@ var player;
     }
   }
 
+
+
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var collectionItems = document.querySelectorAll('.inspi-collection-item');
+
+    if (collectionItems.length > 0) {
+      collectionItems.forEach(function (item, index) {
+        var numberP = item.querySelector('.number-p');
+        if (numberP) {
+          numberP.textContent = index + 1;
+        }
+      });
+    }
+  });
