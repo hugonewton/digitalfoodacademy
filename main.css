@@ -92,5 +92,9 @@ media screen and (max-width: 479px)
 }
 
 .inspi-collection-list .inspi-collection-item:nth-child(even) svg {
-  color: var(--flash-purple);;
+  color: var(--flash-purple);
+}
+
+.cover-container {
+  border-color: var(--flash-purple);
 }
