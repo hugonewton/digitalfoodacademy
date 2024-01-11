@@ -1,57 +1,50 @@
-// Get all the buttons
-var buttons = document.querySelectorAll('.pricing-btn');
-var startNowBtn = document.getElementById('start-now-btn');
-var promoCodeSubmitBtn = document.getElementById('promo-code-submit-btn');
+    // Get all the buttons
+    var buttons = document.querySelectorAll('.pricing-btn');
+    var startNowBtn = document.getElementById('start-now-btn');
+    var promoCodeSubmitBtn = document.getElementById('promo-code-submit-btn');
 
-// Promo codes and their corresponding prices
-var promoCodePrices = {
-  'CODE1': '900,00 €',
-  'CODE2': '750,00 €',
-  // Add more promo codes and prices as needed
-};
+    // Promo codes and their corresponding prices
+    var promoCodePrices = {
+      'CODE1': '900,00 €',
+      'CODE2': '750,00 €',
+      // Add more promo codes and prices as needed
+    };
 
-// Add event listeners to buttons if they exist
-if (buttons.length > 0) {
-  buttons.forEach(function (button) {
-    button.addEventListener('click', function () {
-      updatePriceAndLink(button);
-    });
-  });
-}
 
-// Add event listener to promo code submit button if it exists
-if (promoCodeSubmitBtn) {
-  promoCodeSubmitBtn.addEventListener('click', function (event) {
-    event.preventDefault(); // Prevent the form from submitting (since it's a link)
-    applyPromoCode();
-  });
-}
+      // Add event listeners to all buttons
+      buttons.forEach(function (button) {
+          button.addEventListener('click', function () {
+            updatePriceAndLink(button);
+          });
+      });
 
-function updatePriceAndLink(button) {
-  // Remove "active" class from all buttons
-  buttons.forEach(function (btn) {
-    btn.classList.remove('active');
-  });
+    // Add event listener to promo code submit button
+     promoCodeSubmitBtn.addEventListener('click', function (event) {
+         event.preventDefault(); // Prevent the form from submitting (since it's a link)
+         applyPromoCode();
+     });
 
-  // Add "active" class to the clicked button
-  button.classList.add('active');
+ function updatePriceAndLink(button) {
+     // Remove "active" class from all buttons
+     buttons.forEach(function (btn) {
+         btn.classList.remove('active');
+     });
 
-  // Get the price from the data attribute
-  var newPrice = button.getAttribute('data-price');
-  var newUrl = button.getAttribute('data-url');
+     // Add "active" class to the clicked button
+     button.classList.add('active');
 
-  // Update the price in the paragraph
-  var priceParagraph = document.querySelector('.pricing-price-p');
-  if (priceParagraph) {
-    priceParagraph.textContent = newPrice;
-  }
+     // Get the price from the data attribute
+     var newPrice = button.getAttribute('data-price');
+     var newUrl = button.getAttribute('data-url');
 
-  // Update the link in the "start-now-btn"
-  if (startNowBtn) {
-    startNowBtn.setAttribute('href', newUrl);
-  }
-}
 
+     // Update the price in the paragraph
+     var priceParagraph = document.querySelector('.pricing-price-p');
+     priceParagraph.textContent = newPrice;
+
+     // Update the link in the "start-now-btn"
+     startNowBtn.setAttribute('href', newUrl);
+ }
 
 
 
