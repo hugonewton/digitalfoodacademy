@@ -97,3 +97,10 @@ media screen and (max-width: 479px)
 .inspi-collection-list .inspi-collection-item:nth-child(even) .color-overlay {
   background-color: rgba(78, 61, 253, .4);
 }
+
+.lead-magnet-wrapper ul {
+  list-style-type: square;
+}
+.lead-magnet-wrapper ul li::marker {
+  color: var(--accent);
+}
