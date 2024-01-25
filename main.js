@@ -36,15 +36,23 @@ function updatePriceAndLink(button) {
   // Add "active" class to the clicked button
   button.classList.add('active');
 
-  // Get the price from the data attribute
+  // Get the price, utl, ht price from the data attribute
   var newPrice = button.getAttribute('data-price');
   var newUrl = button.getAttribute('data-url');
+  var newHt = button.getAttribute('data-ht');
 
   // Update the price in the paragraph
   var priceParagraph = document.querySelector('.pricing-price-p');
   if (priceParagraph) {
     priceParagraph.textContent = newPrice;
   }
+
+  // Update the ht-price in the paragraph
+  var htText = document.getElementById('ht-pricing');
+  if (htText) {
+    htText.textContent = newHt;
+  }
+
 
   // Update the link in the "start-now-btn"
   if (startNowBtn) {
