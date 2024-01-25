@@ -83,11 +83,13 @@ function updatePriceAndLink(button) {
       }
 
       promoCodeFormFail.style.display = 'none'; // Hide the error message
+      htText.style.display = 'none'; // Hide the HT price
       promoCodeAuLieuDe.style.display = 'block' // Show the "Au lieu de"
 
   } else {
       // Promo code is invalid, display error message
       promoCodeFormFail.style.display = 'block'; // Show the error message
+      htText.style.display = 'block'; // Show the HT price
       promoCodeAuLieuDe.style.display = 'none' // Hide the "Au lieu de"
   }
 }
