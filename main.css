@@ -104,3 +104,8 @@ media screen and (max-width: 479px)
 .lead-magnet-wrapper ul li::marker {
   color: var(--accent);
 }
+
+
+.testimonial-embed .masonry-grid .item .absolute {
+  display: none;
+}
