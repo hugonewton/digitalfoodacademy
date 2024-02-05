@@ -141,3 +141,13 @@ var player;
       });
     }
   });
+
+
+
+
+    // Add placeholders to input fields that do not have any
+  $(document).ready(function(){
+    $('input').each(function(index) {
+  		$(this).attr("placeholder", $(this).attr("data-placeholder"));	
+		});
+  });
