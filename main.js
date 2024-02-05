@@ -144,10 +144,9 @@ var player;
 
 
 
-
-    // Add placeholders to input fields that do not have any
-  $(document).ready(function(){
-    $('input').each(function(index) {
-  		$(this).attr("placeholder", $(this).attr("data-placeholder"));	
-		});
+// Add placeholders to input fields that have the data-placeholder attribute
+$(document).ready(function () {
+  $('input[data-placeholder]').each(function (index) {
+    $(this).attr("placeholder", $(this).attr("data-placeholder"));
   });
+});
