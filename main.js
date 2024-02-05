@@ -55,12 +55,10 @@ function updatePriceAndLink(button) {
 
 
   // Update the link in the "start-now-btn"
-  if (startNowBtn) {
-    startNowBtn.setAttribute('href', newUrl);
-  }
+  // if (startNowBtn) {
+  //   startNowBtn.setAttribute('href', newUrl);
+  // }
 }
-
-
 
 
  function applyPromoCode() {
