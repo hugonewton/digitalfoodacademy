@@ -154,18 +154,20 @@ $(document).ready(function () {
 
 // Wait for the document to be ready
 document.addEventListener("DOMContentLoaded", function () {
-  // Get the element with the class "text-price-summary"
-  var priceSummaryElement = document.querySelector('.text-price-summary');
+  // Get the elements with the necessary IDs
+  var totalPriceElement = document.getElementById("total-price");
+  var taxAmountElement = document.getElementById("tax-amount");
 
-  // Check if the element exists
-  if (priceSummaryElement) {
-    // Extract the text content and remove non-breaking spaces and currency symbol
-    var priceText = priceSummaryElement.textContent.replace(/[\u00A0€]/g, '');
+  // Check if the elements exist
+  if (totalPriceElement && taxAmountElement) {
+    // Extract the total price value
+    var totalPriceText = totalPriceElement.textContent.replace(/[\u00A0€]/g, '');
+    var totalPrice = parseFloat(totalPriceText);
 
-    // Convert the cleaned text to a number
-    var priceValue = parseFloat(priceText);
+    // Calculate the tax amount (assuming 20% tax)
+    var taxAmount = totalPrice / 120 * 20;
 
-    // Log or use the extracted number value
-    console.log(priceValue);
+    // Update the content of the tax amount element
+    taxAmountElement.textContent = taxAmount.toFixed(2) + ' €';
   }
 });
