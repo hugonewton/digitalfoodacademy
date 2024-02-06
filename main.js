@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Failed to parse total price as a number."); // Debugging: Log an error if parsing fails
       }
     }
-  }, 2000); // 2000 milliseconds = 2 seconds
+  }, 10000); // 2000 milliseconds = 2 seconds
 });
 
 
