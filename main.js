@@ -148,3 +148,24 @@ $(document).ready(function () {
     $(this).attr("placeholder", $(this).attr("data-placeholder"));
   });
 });
+
+
+
+
+// Wait for the document to be ready
+document.addEventListener("DOMContentLoaded", function () {
+  // Get the element with the class "text-price-summary"
+  var priceSummaryElement = document.querySelector('.text-price-summary');
+
+  // Check if the element exists
+  if (priceSummaryElement) {
+    // Extract the text content and remove non-breaking spaces and currency symbol
+    var priceText = priceSummaryElement.textContent.replace(/[\u00A0€]/g, '');
+
+    // Convert the cleaned text to a number
+    var priceValue = parseFloat(priceText);
+
+    // Log or use the extracted number value
+    console.log(priceValue);
+  }
+});
