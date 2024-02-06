@@ -151,32 +151,35 @@ $(document).ready(function () {
 
 
 
-
 // Wait for the document to be ready
 document.addEventListener("DOMContentLoaded", function () {
-  // Get the elements with the necessary IDs
-  var totalPriceElement = document.getElementById("total-price");
-  var taxAmountElement = document.getElementById("tax-amount");
+  // Set a timeout to wait for two seconds
+  setTimeout(function () {
+    // Get the elements with the necessary IDs
+    var totalPriceElement = document.getElementById("total-price");
+    var taxAmountElement = document.getElementById("tax-amount");
 
-  // Check if the elements exist
-  if (totalPriceElement && taxAmountElement) {
-    // Extract the total price value
-    var totalPriceText = totalPriceElement.textContent.replace(/[\u00A0€]/g, '');
-    console.log("Total Price Text:", totalPriceText); // Debugging: Log the extracted total price text
-    var totalPrice = parseFloat(totalPriceText);
+    // Check if the elements exist
+    if (totalPriceElement && taxAmountElement) {
+      // Extract the total price value
+      var totalPriceText = totalPriceElement.textContent.replace(/[\u00A0€]/g, '');
+      console.log("Total Price Text:", totalPriceText); // Debugging: Log the extracted total price text
+      var totalPrice = parseFloat(totalPriceText);
 
-    console.log("Parsed Total Price:", totalPrice); // Debugging: Log the parsed total price
+      console.log("Parsed Total Price:", totalPrice); // Debugging: Log the parsed total price
 
-    // Check if totalPrice is a valid number
-    if (!isNaN(totalPrice)) {
-      // Calculate the tax amount (assuming 20% tax)
-      var taxAmount = totalPrice / 120 * 20;
+      // Check if totalPrice is a valid number
+      if (!isNaN(totalPrice)) {
+        // Calculate the tax amount (assuming 20% tax)
+        var taxAmount = totalPrice / 120 * 20;
 
-      // Update the content of the tax amount element with space and € symbol
-      taxAmountElement.textContent = taxAmount.toFixed(2) + ' €'; // Adjust decimal places as needed
-    } else {
-      console.error("Failed to parse total price as a number."); // Debugging: Log an error if parsing fails
+        // Update the content of the tax amount element with space and € symbol
+        taxAmountElement.textContent = taxAmount.toFixed(2) + ' €'; // Adjust decimal places as needed
+      } else {
+        console.error("Failed to parse total price as a number."); // Debugging: Log an error if parsing fails
+      }
     }
-  }
+  }, 2000); // 2000 milliseconds = 2 seconds
 });
+
 
