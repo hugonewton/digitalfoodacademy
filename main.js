@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Check if the elements exist
     if (totalPriceElement && taxAmountElement) {
       // Extract the total price value
-      var totalPriceText = totalPriceElement.textContent.replace(/[\u00A0€]/g, '');
+      var totalPriceText = totalPriceElement.textContent.replace(/[\u00A0€,]/g, ''); // Remove non-numeric characters
       console.log("Total Price Text:", totalPriceText); // Debugging: Log the extracted total price text
       var totalPrice = parseFloat(totalPriceText);
 
