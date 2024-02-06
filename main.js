@@ -163,6 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Extract the total price value
     var totalPriceText = totalPriceElement.textContent.replace(/[\u00A0€]/g, '');
     var totalPrice = parseFloat(totalPriceText);
+    console.log(totalPrice);
 
     // Calculate the tax amount (assuming 20% tax)
     var taxAmount = totalPrice / 120 * 20;
