@@ -162,8 +162,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // Check if the elements exist
     if (totalPriceElement && taxAmountElement) {
       // Extract the total price value
-      var totalPriceText = totalPriceElement.textContent.replace(/[\u00A0€,]/g, ''); // Remove non-numeric characters
+      var totalPriceText = totalPriceElement.textContent.replace(/[\u00A0€ ,]/g, ''); // Remove non-numeric characters and spaces
       console.log("Total Price Text:", totalPriceText); // Debugging: Log the extracted total price text
+
+      // Remove the space between "1" and "2"
+      totalPriceText = totalPriceText.replace(/\s/g, '');
+
+      // Remove the last two zeros
+      totalPriceText = totalPriceText.slice(0, -2);
+
       var totalPrice = parseFloat(totalPriceText);
 
       console.log("Parsed Total Price:", totalPrice); // Debugging: Log the parsed total price
@@ -181,5 +188,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }, 10000); // 2000 milliseconds = 2 seconds
 });
+
 
 
