@@ -162,13 +162,21 @@ document.addEventListener("DOMContentLoaded", function () {
   if (totalPriceElement && taxAmountElement) {
     // Extract the total price value
     var totalPriceText = totalPriceElement.textContent.replace(/[\u00A0€]/g, '');
+    console.log("Total Price Text:", totalPriceText); // Debugging: Log the extracted total price text
     var totalPrice = parseFloat(totalPriceText);
-    console.log(totalPrice);
 
-    // Calculate the tax amount (assuming 20% tax)
-    var taxAmount = totalPrice / 120 * 20;
+    console.log("Parsed Total Price:", totalPrice); // Debugging: Log the parsed total price
 
-    // Update the content of the tax amount element
-    taxAmountElement.textContent = taxAmount.toFixed(2) + ' €';
+    // Check if totalPrice is a valid number
+    if (!isNaN(totalPrice)) {
+      // Calculate the tax amount (assuming 20% tax)
+      var taxAmount = totalPrice / 120 * 20;
+
+      // Update the content of the tax amount element with space and € symbol
+      taxAmountElement.textContent = taxAmount.toFixed(2) + ' €'; // Adjust decimal places as needed
+    } else {
+      console.error("Failed to parse total price as a number."); // Debugging: Log an error if parsing fails
+    }
   }
 });
+
